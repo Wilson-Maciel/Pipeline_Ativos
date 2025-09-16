@@ -1,0 +1,18 @@
+# GetPrices.py
+# Junta Bitcoin + Commodities em um único DataFrame e imprime (uma vez).
+
+import pandas as pd
+from GetBitcoin import get_bitcoin_df
+from GetCommodities import get_commodities_df
+
+if __name__ == "__main__":
+     #coleta
+
+    df_btc = get_bitcoin_df()
+    df_comm = get_commodities_df()
+
+    #junta tudo
+    df = pd.concat([df_btc, df_comm], ignore_index=True)
+    #imprime
+    print(df)
+    
